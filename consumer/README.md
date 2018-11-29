@@ -7,6 +7,3 @@
 - 查看镜像: docker images
 - 运行项目: docker run -d -p 8081:8081 --name consumer --network dubbo-net consumer
 - 查看实时日志：docker logs -f consumer
-
-### 访问一下吧
-[http://localhost:8081/hello/amos](http://localhost:8081/hello/amos)
