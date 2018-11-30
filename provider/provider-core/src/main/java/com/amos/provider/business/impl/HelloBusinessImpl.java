@@ -21,6 +21,6 @@ public class HelloBusinessImpl implements HelloBusiness {
         System.out.println("==================================");
         System.out.println("provider say hello to " + name);
         System.out.println("==================================");
-        return "PROVIDER SAY: HELLO " + name;
+        return "Congratulations! " + name + ", You're awesome!";
     }
 }
