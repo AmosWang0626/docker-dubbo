@@ -1,19 +1,25 @@
-# Dubbo Provider
+# Docker Dubbo
 > spring boot stater project
 
-- 当前项目主页：[docker-dubbo](https://amoswang0626.github.io/docker-dubbo/)
+## 项目介绍
+> 本项目旨在应用阿里开源的分布式服务框架 [dubbo](http://dubbo.apache.org/zh-cn/)
+
+- 主要内容包括
+  - docker 构建 zookeeper 集群
+  - docker 构建 dubbo-admin（服务管理后台）
+  - docker 构建 服务提供者 [provider](provider)
+  - docker 构建 服务消费者 [consumer](consumer)
+
+- 项目主页：[docker-dubbo](https://amoswang0626.github.io/docker-dubbo/)
 - 温馨提示：_blank方式打开链接，请按住Ctrl键
 
 
-## docker 构建 zookeeper集群、dubbo-admin 环境
+## docker 构建 zookeeper 集群、dubbo-admin
   - [docker-compose.yml](docker-compose.yml)
   - docker-compose up -d
   - 访问dubbo-admin [http://localhost:8080/](http://localhost:8080/)
     - root用户：账号密码均为root
     - guest用户：账号密码均为guest
-
-## 测试 dubbo 消费者调用生产者
-- sayHello [http://localhost:8081/hello/amos](http://localhost:8081/hello/amos)
 
 ## 注意事项
 - 不删除旧镜像，再次构建，旧镜像就会被悬空
