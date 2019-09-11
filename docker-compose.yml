@@ -9,7 +9,7 @@ services:
       - 2181:2181
     environment:
       ZOO_MY_ID: 1
-      ZOO_SERVERS: server.1=zoo1:2888:3888 server.2=zoo2:2888:3888 server.3=zoo3:2888:3888
+      ZOO_SERVERS: server.1=zoo1:2888:3888;2181 server.2=zoo2:2888:3888;2181 server.3=zoo3:2888:3888;2181
     networks:
       - dubbo-net
 
@@ -21,7 +21,7 @@ services:
       - 2182:2181
     environment:
       ZOO_MY_ID: 2
-      ZOO_SERVERS: server.1=zoo1:2888:3888 server.2=zoo2:2888:3888 server.3=zoo3:2888:3888
+      ZOO_SERVERS: server.1=zoo1:2888:3888;2181 server.2=zoo2:2888:3888;2181 server.3=zoo3:2888:3888;2181
     networks:
       - dubbo-net
 
@@ -33,7 +33,7 @@ services:
       - 2183:2181
     environment:
       ZOO_MY_ID: 3
-      ZOO_SERVERS: server.1=zoo1:2888:3888 server.2=zoo2:2888:3888 server.3=zoo3:2888:3888
+      ZOO_SERVERS: server.1=zoo1:2888:3888;2181 server.2=zoo2:2888:3888;2181 server.3=zoo3:2888:3888;2181
     networks:
       - dubbo-net
 
@@ -45,9 +45,9 @@ services:
     networks:
       - dubbo-net
     environment:
-      - dubbo.registry.address=zookeeper://zoo1:2181
-      - dubbo.config-center=zookeeper://zoo1:2181
-      - dubbo.metadata-report.address=zookeeper://zoo1:2181
+      - admin.registry.address=zookeeper://zoo1:2181
+      - admin.config-center=zookeeper://zoo1:2181
+      - admin.metadata-report.address=zookeeper://zoo1:2181
     depends_on:
       - zoo1
       - zoo2
