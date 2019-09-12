@@ -45,9 +45,9 @@ services:
     networks:
       - dubbo-net
     environment:
-      - admin.registry.address=zookeeper://zoo1:2181
-      - admin.config-center=zookeeper://zoo1:2181
-      - admin.metadata-report.address=zookeeper://zoo1:2181
+      - admin.registry.address=zookeeper://zoo1:2181?backup=zoo2:2181,zoo3:2181
+      - admin.config-center=zookeeper://zoo1:2181?backup=zoo2:2181,zoo3:2181
+      - admin.metadata-report.address=zookeeper://zoo1:2181?backup=zoo2:2181,zoo3:2181
     depends_on:
       - zoo1
       - zoo2
