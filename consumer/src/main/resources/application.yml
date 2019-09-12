@@ -1,0 +1,24 @@
+# SERVER
+server:
+  port: 8889
+
+spring:
+  application:
+    name: consumer
+
+# dubbo
+dubbo:
+  application:
+    name: consumer
+  protocol:
+    name: dubbo
+    port: 20881
+  registry:
+    # IDEA 本地运行
+    address: zookeeper://127.0.0.1:2181
+    # address: zookeeper
+    # Docker 运行
+    # address: zookeeper://zoo1:2181?backup=zoo2:2181,zoo3:2181
+    # address: zoo1:2181,zoo2,zoo3:2183
+  consumer:
+    timeout: 3000

@@ -1,8 +1,7 @@
 package com.amos.provider.business.impl;
 
-import com.alibaba.dubbo.config.annotation.Service;
-import com.amos.provider.business.HelloBusiness;
 import com.amos.provider.dubbo.DubboHelloBusiness;
+import org.apache.dubbo.config.annotation.Service;
 import org.springframework.stereotype.Component;
 
 /**
@@ -12,9 +11,9 @@ import org.springframework.stereotype.Component;
  * @author Daoyuan
  * @date 2018/11/29
  */
-@Service(interfaceClass = DubboHelloBusiness.class)
+@Service
 @Component("helloBusiness")
-public class HelloBusinessImpl implements HelloBusiness {
+public class HelloBusinessImpl implements DubboHelloBusiness {
 
     @Override
     public String sayHello(String name) {

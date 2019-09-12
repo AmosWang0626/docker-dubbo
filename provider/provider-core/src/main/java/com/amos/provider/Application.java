@@ -1,6 +1,6 @@
 package com.amos.provider;
 
-import com.alibaba.dubbo.spring.boot.annotation.EnableDubboConfiguration;
+import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -9,8 +9,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  *
  * @author Daoyuan
  */
-@SpringBootApplication(scanBasePackages = "com.amos.provider")
-@EnableDubboConfiguration
+@SpringBootApplication
+@EnableDubbo(scanBasePackages = "com.amos.provider.business.impl")
 public class Application {
 
     public static void main(String[] args) {
