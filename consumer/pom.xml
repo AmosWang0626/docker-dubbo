@@ -30,7 +30,7 @@
     <dependencies>
         <dependency>
             <groupId>com.amos</groupId>
-            <artifactId>provider-facade</artifactId>
+            <artifactId>provider-api</artifactId>
             <version>1.0.0</version>
         </dependency>
         <dependency>
