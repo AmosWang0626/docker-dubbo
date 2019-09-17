@@ -1,0 +1,33 @@
+version: '3.5'
+
+services:
+  zookeeper:
+    image: zookeeper
+    restart: always
+    container_name: zk
+    ports:
+      - 2181:2181
+    networks:
+      - dubbo-net
+    environment:
+      ZOO_MY_ID: 1
+      ZOO_SERVERS: server.1=0.0.0.0:2888:3888;2181
+
+  admin:
+    image: apache/dubbo-admin
+    container_name: dubbo
+    depends_on:
+      - zookeeper
+    ports:
+      - 8080:8080
+    networks:
+      - dubbo-net
+    environment:
+      - admin.registry.address=zookeeper://zookeeper:2181
+      - admin.config-center=zookeeper://zookeeper:2181
+      - admin.metadata-report.address=zookeeper://zookeeper:2181
+
+networks:
+  dubbo-net:
+    name: dubbo-net
+    driver: bridge

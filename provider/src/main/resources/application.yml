@@ -1,0 +1,22 @@
+# SERVER
+server:
+  port: 8888
+
+spring:
+  application:
+    name: provider
+
+# dubbo
+dubbo:
+  application:
+    name: provider
+  protocol:
+    name: dubbo
+    port: 20880
+  config-center:
+    address: zookeeper://127.0.0.1:2181
+  registry:
+    # IDEA 本地运行
+    address: zookeeper://127.0.0.1:2181
+    # Docker 运行
+    # address: zookeeper://zoo1:2181?backup=zoo2:2181,zoo3:2181 
