@@ -13,6 +13,8 @@ dubbo:
   protocol:
     name: dubbo
     port: 20880
+  config-center:
+    address: zookeeper://127.0.0.1:2181
   registry:
     # IDEA 本地运行
     address: zookeeper://127.0.0.1:2181
